@@ -11,10 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150516172447) do
+ActiveRecord::Schema.define(version: 20150516175554) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "event_tags", force: :cascade do |t|
+    t.integer "event_id"
+    t.integer "tag_id"
+  end
 
   create_table "events", force: :cascade do |t|
     t.string   "name"
@@ -22,20 +27,22 @@ ActiveRecord::Schema.define(version: 20150516172447) do
     t.datetime "event_time"
     t.string   "location"
     t.string   "link"
-    t.integer  "tag_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "events", ["tag_id"], name: "index_events_on_tag_id", using: :btree
+  create_table "events_tags", id: false, force: :cascade do |t|
+    t.integer "event_id", null: false
+    t.integer "tag_id",   null: false
+  end
 
-  create_table "tag", force: :cascade do |t|
+  add_index "events_tags", ["event_id"], name: "index_events_tags_on_event_id", using: :btree
+  add_index "events_tags", ["tag_id"], name: "index_events_tags_on_tag_id", using: :btree
+
+  create_table "tags", force: :cascade do |t|
     t.string   "name"
-    t.integer  "tag_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "tag", ["tag_id"], name: "index_tag_on_tag_id", using: :btree
 
 end
