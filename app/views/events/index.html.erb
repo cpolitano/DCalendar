@@ -1,0 +1,13 @@
+<h1>Welcome to DCalendar</h1>
+
+<h2>All the DC tech events in one place</h2>
+
+<ul>
+<% @events.each do |event| %>
+  <li><%= event.name %></li>
+  <li><%= event.description %></li>
+  <li><%= event.event_time %></li>
+  <li><%= event.location %></li>
+  <li><%= event.link %></li>
+<% end %>
+</ul>
