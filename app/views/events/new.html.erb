@@ -1,0 +1,28 @@
+<% if @event.errors.any? %>
+<h4>Please fix these errors</h4>
+  <ul>
+    <% @event.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for(@event) do |f| %>
+    <%= f.label :name, 'Name:' %>
+    <%= f.text_field :name, autofocus: true, placeholder: 'Name' %>
+
+    <%= f.label :description, 'Description:' %>
+    <%= f.text_area :description, placeholder: 'Description' %>
+
+    <%= f.label :event_time, 'Event Date/Time:' %>
+    <%= f.datetime_select :event_time, placeholder: 'Event Date/Time' %>
+
+    <%= f.label :location, 'Location:' %>
+    <%= f.text_field :location, placeholder: 'Location' %>
+
+    <%= f.label :link, 'URL:' %>
+    <%= f.text_field :link, placeholder: 'URL' %>
+    
+    <%= f.submit "Submit", :class => 'btn btn-info' %>
+<% end %>
+  

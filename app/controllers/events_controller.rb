@@ -1,7 +1,8 @@
 class EventsController < ApplicationController
 
   def index
-    @events = Event.all
+    @events = Event.where('event_time >= ?', Date.today).order(event_time: :asc)
+
   end
 
   def show
@@ -16,8 +17,10 @@ class EventsController < ApplicationController
       @event = Event.new(event_params)
 
     if @event.save
-      redirect_to @event
+      flash[:notice] = "Your Event Has Been Created!"
+      redirect_to events_path
     else 
+      flash[:alert] = "There Was a Problem With Your Event. Please Try Again."
       render 'new'
     end
   end
