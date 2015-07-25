@@ -2,6 +2,8 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.where('event_time >= ?', Date.today).order(event_time: :asc)
+    @connection = Connection.new
+    @new_events = @connection.get_eventbrite_events
 
   end
 
@@ -19,7 +21,7 @@ class EventsController < ApplicationController
     if @event.save
       flash[:notice] = "Your Event Has Been Created!"
       redirect_to events_path
-    else 
+    else
       flash[:alert] = "There Was a Problem With Your Event. Please Try Again."
       render 'new'
     end
