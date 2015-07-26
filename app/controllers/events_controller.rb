@@ -4,7 +4,7 @@ class EventsController < ApplicationController
     @events = Event.where('event_time >= ?', Date.today).order(event_time: :asc)
     @connection = Connection.new
     new_events = @connection.get_eventbrite_events
-    @three_events = @connection.parse_eventbrite_data(new_events)
+    @some_events = @connection.parse_eventbrite_data(new_events)
 
   end
 
