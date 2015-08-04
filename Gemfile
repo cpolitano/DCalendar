@@ -17,7 +17,7 @@ group :development, :test do
   gem 'spring'
 end
 
-group :test do 
+group :test do
   gem 'shoulda-matchers'
   gem 'rspec-rails'
 end

@@ -8,31 +8,31 @@
 
 
 Event.create([
-  { 
-    name: "DjangoFest2015", 
-    description: "Getting djiggy with django!", 
-    event_time: "2015-08-02 09:00:00 EST", 
+  {
+    name: "DjangoFest2015",
+    description: "Getting djiggy with django!",
+    event_time: "2015-09-02 09:00:00 EST",
     location: "iStrategyLabs",
     link: "http://istrategylabs.com"
   },
-  { 
-    name: "Women Who Code Hackathon", 
-    description: "Come hack on your code projects with cool female devs.", 
-    event_time: "2015-07-24 18:00:00 EST", 
+  {
+    name: "Women Who Code Hackathon",
+    description: "Come hack on your code projects with cool female devs.",
+    event_time: "2016-07-24 18:00:00 EST",
     location: "WeWork Shaw",
     link: "http://wework.com"
   },
-    { 
-    name: "Rails Hack Night", 
-    description: "Lightning talks featuring Rails projects, followed by work time. Beginners welcome!", 
-    event_time: "2015-07-07 19:30:00 EST", 
+    {
+    name: "Rails Hack Night",
+    description: "Lightning talks featuring Rails projects, followed by work time. Beginners welcome!",
+    event_time: "2016-07-07 19:30:00 EST",
     location: "iStrategyLabs",
     link: "http://istrategylabs.com"
   },
-    { 
-    name: "Code and Coffee", 
-    description: "BYO-Projects and laptops for a fun, informal way to learn, code and work on projects with other members in the community.", 
-    event_time: "2015-06-15 14:00:00 EST", 
+    {
+    name: "Code and Coffee",
+    description: "BYO-Projects and laptops for a fun, informal way to learn, code and work on projects with other members in the community.",
+    event_time: "2015-12-15 14:00:00 EST",
     location: "Compass Coffee",
     link: "http://www.meetup.com/Women-Who-Code-DC/"
   },

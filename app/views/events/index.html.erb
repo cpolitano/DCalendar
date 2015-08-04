@@ -2,14 +2,21 @@
 
 <h2>All the DC tech events in one place</h2>
 
+<%= link_to 'Add an Event', new_event_path  %>
+
 <ul>
 <% @events.each do |event| %>
   <li><%= event.name %></li>
-  <li><%= event.description %></li>
-  <li><%= event.event_time %></li>
-  <li><%= event.location %></li>
-  <li><%= event.link %></li>
 <% end %>
 </ul>
 
-<%= link_to 'Add an Event', new_event_path  %>
+<h2>Events from EventBrite</h2>
+<% @some_events.each do |event| %>
+  <h4><%= event["name"]["text"] %></h4>
+  <ul>
+    <li>Start <%= event["start"]["utc"] %></li>
+    <li>End <%= event["end"]["utc"] %></li>
+    <li>Venue <%= event["venue_id"] %></li>
+  </ul>
+<% end %>
+
