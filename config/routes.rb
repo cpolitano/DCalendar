@@ -16,6 +16,10 @@ Rails.application.routes.draw do
 
   resources :events
 
+  namespace :api do
+    resources :events
+  end
+
   # Example resource route with options:
   #   resources :products do
   #     member do
